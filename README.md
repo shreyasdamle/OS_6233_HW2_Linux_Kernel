@@ -20,7 +20,7 @@ Submit a report in PDF format along with code that details the following:
 
 
 ###Task 1. Add “Hello World” system call
-1. Prepare the virtual machine.
+- Prepare the virtual machine.
 
        - Install VirtualBox
        
@@ -30,13 +30,11 @@ Submit a report in PDF format along with code that details the following:
        
        - To reduce time for compiling Linux kernel so you could use multiple CPU cores for your virtual machine and use $make -jn when compiling the kernel, where n is number of CPU cores.
 
-2. Download Linux Kernel: https://www.kernel.org/ (2.6.39):
+- Download Linux Kernel: https://www.kernel.org/ (2.6.39): ftp://ftp.kernel.org/pub/linux/kernel/v2.6/linux-2.6.39.tar.bz2
 
-ftp://ftp.kernel.org/pub/linux/kernel/v2.6/linux-2.6.39.tar.bz2
+- Extract the kernel to /usr/src/
 
-3. Extract the kernel to /usr/src/
-
-4. Write your own system call, named my_system_call.c and place it in the linux-2.6.39/kernel folder
+- Write your own system call, named my_system_call.c and place it in the linux-2.6.39/kernel folder
 
 For example:
 ```
@@ -55,7 +53,7 @@ asmlinkage long sys_hello(const char *msg)
 }
 ```
 
-4. Declare your new system call in the kernel source.
+- Declare your new system call in the kernel source.
 
        - Open the file linux-2.6.39/arch/x86/kernel/syscall_table_32.S and add the below line in the end of the file: 
 ```
@@ -65,9 +63,9 @@ asmlinkage long sys_hello(const char *msg)
 ```
 #define NR_syshello 345
 
-//Change 345 to other number if it is already defined.
+\//Change 345 to other number if it is already defined.
 ```
-       Change the line “#define NR_syscalls 345” to “#define NR_syscalls 346”
+       - Change the line “#define NR_syscalls 345” to “#define NR_syscalls 346”
 
        - Open the file linux-2.6.39/arch/x86/include/asm/unistd_64.h, find line “__SYSCALL(__NR_syncfs, sys_syncfs)” and add two following lines after that line:
 
