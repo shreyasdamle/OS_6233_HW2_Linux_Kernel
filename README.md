@@ -28,9 +28,7 @@ Submit a report in PDF format along with code that details the following:
 
 2. Download Linux Kernel: https://www.kernel.org/ (2.6.39): ftp://ftp.kernel.org/pub/linux/kernel/v2.6/linux-2.6.39.tar.bz2
 
-3. Extract the kernel to /usr/src/
-
-- Write your own system call, named my_system_call.c and place it in the linux-2.6.39/kernel folder
+3. Extract the kernel to /usr/src/. Write your own system call, named *my_system_call.c* and place it in the linux-2.6.39/kernel folder
 
 For example:
 ```
