@@ -47,35 +47,38 @@ asmlinkage long sys_hello(const char *msg)
 }
 ```
 
-- Declare your new system call in the kernel source.
+4. Declare your new system call in the kernel source.
 
-       - Open the file linux-2.6.39/arch/x86/kernel/syscall_table_32.S and add the below line in the end of the file: 
+- Open the file linux-2.6.39/arch/x86/kernel/syscall_table_32.S and add the below line in the end of the file: 
+
 ```
 .long sys_hello
 ```
-       - Open the file linux-2.6.39/arch/x86/include/asm/unistd_32.h and add a new line after the line #define __NR_syncfs:
+
+- Open the file linux-2.6.39/arch/x86/include/asm/unistd_32.h and add a new line after the line #define __NR_syncfs:
+
 ```
 #define NR_syshello 345
 
 \//Change 345 to other number if it is already defined.
 ```
-       - Change the line “#define NR_syscalls 345” to “#define NR_syscalls 346”
+- Change the line “#define NR_syscalls 345” to “#define NR_syscalls 346”
 
-       - Open the file linux-2.6.39/arch/x86/include/asm/unistd_64.h, find line “__SYSCALL(__NR_syncfs, sys_syncfs)” and add two following lines after that line:
+- Open the file linux-2.6.39/arch/x86/include/asm/unistd_64.h, find line “__SYSCALL(__NR_syncfs, sys_syncfs)” and add two following lines after that line:
 
 ```
-            #define __NR_syshello 307
+#define __NR_syshello 307
 
-       __SYSCALL(__NR_syshello, sys_hello)
+__SYSCALL(__NR_syshello, sys_hello)
 
-     //Change 307 to other number if it is already defined.
+//Change 307 to other number if it is already defined.
 ```
-       - Open the file linux-2.6.39/include/linux/syscalls.h and add the below line in the end of the file and before #endif:
+
+- Open the file linux-2.6.39/include/linux/syscalls.h and add the below line in the end of the file and before #endif:
+
 ```
        asmlinkage long sys_hello(const char *msg);
 ```
-
-
 
 5. Declare your new system call in the Makefile:
 
