@@ -1,4 +1,4 @@
-OS_6233_HW1_FileParse
+OS_6233_HW1_Linux_Kernel
 =====================
 Coding Project 2
 CS 6233
