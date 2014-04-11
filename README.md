@@ -88,24 +88,24 @@ Submit a report in PDF format along with code that details the following:
 
        You could strip down unnecessary modules in the kernel by following this instruction: http://linux-hacks.blogspot.com/2009/06/build-your-kernel-faster.html
 
->       Generate new configure file and save it as .config
+       Generate new configure file and save it as .config
 
->       $make oldconfig
+       >$make oldconfig
+       
+       >$make or $make -jn, where n is number of CPU cores in your machine.
+       
+       >$make modules
+       
+       >$make modules_install
+       
+       >$make install
+       
+       >$cd /boot
 
->       $make or $make -jn, where n is number of CPU cores in your machine.
-
->       $make modules
-
->       $make modules_install
-
->       $make install
-
->       $cd /boot
-
->       $mkinitramfs -o initrd.img-2.6.39 2.6.39
-
->       $update-grub
-
+       >$mkinitramfs -o initrd.img-2.6.39 2.6.39
+       
+       >$update-grub
+       
 7. Test your new system call.
 
        Reboot your machine, choose your new kernel to boot.
