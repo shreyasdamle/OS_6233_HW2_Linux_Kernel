@@ -143,7 +143,7 @@ Submit a report in PDF format along with code that details the following:
        Check the output of the program: `$dmesg` (You should take screenshot of the output of this command)
 
 ###Task 2: Try to hook the system call: **sys_open**.
-
+       
        When a program call sys_open on a file, let’s say my_file.txt, the kernel print out a line: “File my_file.txt is being opened”. After booting on a new modified kernel, use the command $dmesg
 
        Open `my_file.txt` then using the commands `$dmesg` or `$tail -f /var/log/syslog` to see the result.
