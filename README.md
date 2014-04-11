@@ -74,73 +74,70 @@ Submit a report in PDF format along with code that details the following:
        
        Open the file linux-2.6.39/include/linux/syscalls.h and add the below line in the end of the file and before #endif:
        ```
-              asmlinkage long sys_hello(const char *msg);
+       asmlinkage long sys_hello(const char *msg);
        ```
 
 5. Declare your new system call in the Makefile:
 
-       - Open the file linux-2.6.39/kernel/Makefile and find out the line: obj-y += groups.o. After this line, add a new line:
-```
-                        obj-y += my_system_call.o
-```
+       Open the file linux-2.6.39/kernel/Makefile and find out the line: obj-y += groups.o. After this line, add a new line:
+       ```
+       obj-y += my_system_call.o
+       ```
+
 6. Compile and install your new kernel. Assume you are in the folder /usr/src/linux-2.6.39.
 
-You could strip down unnecessary modules in the kernel by following this instruction: http://linux-hacks.blogspot.com/2009/06/build-your-kernel-faster.html
+       You could strip down unnecessary modules in the kernel by following this instruction: http://linux-hacks.blogspot.com/2009/06/build-your-kernel-faster.html
 
-            - Generate new configure file and save it as .config
+>       Generate new configure file and save it as .config
 
-                        $make oldconfig
+>       $make oldconfig
 
-              $make or $make -jn, where n is number of CPU cores in your machine.
+>       $make or $make -jn, where n is number of CPU cores in your machine.
 
-              $make modules
+>       $make modules
 
-              $make modules_install
+>       $make modules_install
 
-              $make install
+>       $make install
 
-              $cd /boot
+>       $cd /boot
 
-              $mkinitramfs -o initrd.img-2.6.39 2.6.39
+>       $mkinitramfs -o initrd.img-2.6.39 2.6.39
 
-              $update-grub
+>       $update-grub
 
 7. Test your new system call.
 
-- Reboot your machine, choose your new kernel to boot.
+       Reboot your machine, choose your new kernel to boot.
 
-- Compile and run this code:
-```
-//test_syscall.c
+       Compile and run this code:
+       ```
+       //test_syscall.c
+       
+       #include <stdio.h>
+       
+       #include <linux/unistd.h>
+       
+       #include <sys/syscall.h>
+       
+       #define sys_hello 345
+       
+        
+       
+       int main(void)
+       
+       {
+       
+          char *msg = “Hello System Call”;
+       
+          syscall(sys_hello , msg);
+       
+          return 0;
+       
+       }
+       ```
 
-#include <stdio.h>
-
-#include <linux/unistd.h>
-
-#include <sys/syscall.h>
-
-#define sys_hello 345
-
- 
-
-int main(void)
-
-{
-
-   char *msg = “Hello System Call”;
-
-   syscall(sys_hello , msg);
-
-   return 0;
-
-}
-```
-
-- Check the output of the program: $dmesg (You should take screenshot of the output of this command)
-
-
-
-
+       Check the output of the program: $dmesg (You should take screenshot of the output of this command)
 
 ###Task 2: Try to hook the system call: sys_open.
 
