@@ -41,9 +41,9 @@ ftp://ftp.kernel.org/pub/linux/kernel/v2.6/linux-2.6.39.tar.bz2
 
 For example:
 
-#include<linux/linkage.h>
+\#include<linux/linkage.h>
 
-#include<linux/kernel.h>
+\#include<linux/kernel.h>
 
 asmlinkage long sys_hello(const char *msg)
 
