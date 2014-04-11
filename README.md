@@ -20,16 +20,16 @@ Submit a report in PDF format along with code that details the following:
 
 
 Task 1. Add “Hello World” system call
-
+---------------------
 1. Prepare the virtual machine.
 
-            - Install VirtualBox
+- Install VirtualBox
 
-            - Download Ubuntu 11.04 Image: http://virtualboxes.org/images/ubuntu/
+- Download Ubuntu 11.04 Image: http://virtualboxes.org/images/ubuntu/
 
-            - You will work on this virtual machine.
+- You will work on this virtual machine.
 
-            - To reduce time for compiling Linux kernel so you could use multiple CPU cores for your virtual machine and use $make -jn when compiling the kernel, where n is number of CPU cores.
+- To reduce time for compiling Linux kernel so you could use multiple CPU cores for your virtual machine and use $make -jn when compiling the kernel, where n is number of CPU cores.
 
 2. Download Linux Kernel: https://www.kernel.org/ (2.6.39):
 
@@ -150,7 +150,7 @@ int main(void)
 
 
 Task 2: Try to hook the system call: sys_open.
-
+---------------------
 When a program call sys_open on a file, let’s say my_file.txt, the kernel print out a line: “File my_file.txt is being opened”. After booting on a new modified kernel, use the command $dmesg
 
             - Open my_file.txt then using the commands $dmesg or $tail -f /var/log/syslog to see the result.
@@ -158,10 +158,8 @@ When a program call sys_open on a file, let’s say my_file.txt, the kernel prin
 Note that, after you done compiling the kernel for the first task, it should take much less time to recompile the kernel latter for other tasks. So be patient :-)
 
 
-
-
 Task 3: Try to hook the system call: sys_write.
-
+---------------------
 When a program call sys_write on file my_file.txt, add to the end of this file a line: “File my_file.txt is being hacked”.
 
             - Write a program that writes to a file then using the commands $dmesg to check the result.
