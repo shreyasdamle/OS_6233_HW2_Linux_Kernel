@@ -20,7 +20,7 @@ Submit a report in PDF format along with code that details the following:
 
 
 ###Task 1. Add “Hello World” system call
-- Prepare the virtual machine.
+1. Prepare the virtual machine.
 
        - Install VirtualBox
        
@@ -30,9 +30,9 @@ Submit a report in PDF format along with code that details the following:
        
        - To reduce time for compiling Linux kernel so you could use multiple CPU cores for your virtual machine and use $make -jn when compiling the kernel, where n is number of CPU cores.
 
-- Download Linux Kernel: https://www.kernel.org/ (2.6.39): ftp://ftp.kernel.org/pub/linux/kernel/v2.6/linux-2.6.39.tar.bz2
+2. Download Linux Kernel: https://www.kernel.org/ (2.6.39): ftp://ftp.kernel.org/pub/linux/kernel/v2.6/linux-2.6.39.tar.bz2
 
-- Extract the kernel to /usr/src/
+3. Extract the kernel to /usr/src/
 
 - Write your own system call, named my_system_call.c and place it in the linux-2.6.39/kernel folder
 
