@@ -173,6 +173,9 @@ linux-2.6.39 / kernel / Makefile
 
 test_syscall.c
 
+linux-2.6.39 / fs / open.c
+
+
 ###Notes
 - http://linux-hacks.blogspot.com/2009/06/build-your-kernel-faster.html // build kernel faster
 
