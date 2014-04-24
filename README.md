@@ -157,6 +157,26 @@ Submit a report in PDF format along with code that details the following:
        
        Write a program that writes to a file then using the commands $dmesg to check the result.
 
+###File list
+
+linux-2.6.39 / kernel / my_system_call.c
+
+linux-2.6.39 / arch / x86 / kernel / syscall_table_32.S
+
+linux-2.6.39 / arch / x86 / include / asm / unistd_32.h
+
+linux-2.6.39 / arch / x86 / include / asm / unistd_64.h
+
+linux-2.6.39 / include / linux / syscalls.h
+
+linux-2.6.39 / kernel / Makefile
+
+test_syscall.c
+
+linux-2.6.39 / fs / open.c
+
+linux-2.6.39 / fs / read_write.c
+
 ###Notes
 - http://linux-hacks.blogspot.com/2009/06/build-your-kernel-faster.html // build kernel faster
 
@@ -171,3 +191,7 @@ Submit a report in PDF format along with code that details the following:
 - useful link - Linux Cross Reference // http://lxr.free-electrons.com/ident?v=2.6.39
 
 - relationship between kernel APIs and system calls // http://blog.chinaunix.net/uid-28362602-id-3424404.html
+
+- Linux 内核配置选项 // http://haolun.blog.51cto.com/173913/993059
+
+- Linux虚拟文件系统之文件打开（sys_open()）// http://blog.csdn.net/bullbat/article/details/7255203
