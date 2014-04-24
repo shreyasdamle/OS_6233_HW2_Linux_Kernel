@@ -187,3 +187,7 @@ test_syscall.c
 - useful link - Linux Cross Reference // http://lxr.free-electrons.com/ident?v=2.6.39
 
 - relationship between kernel APIs and system calls // http://blog.chinaunix.net/uid-28362602-id-3424404.html
+
+- Linux 内核配置选项 // http://haolun.blog.51cto.com/173913/993059
+
+- Linux虚拟文件系统之文件打开（sys_open()）// http://blog.csdn.net/bullbat/article/details/7255203
