@@ -160,10 +160,15 @@ Submit a report in PDF format along with code that details the following:
 ###File list
 
 linux-2.6.39 / kernel / my_system_call.c
+
 linux-2.6.39 / arch / x86 / kernel / syscall_table_32.S
+
 linux-2.6.39 / arch / x86 / include / asm / unistd_32.h
+
 linux-2.6.39 / arch / x86 / include / asm / unistd_64.h
+
 linux-2.6.39 / include / linux / syscalls.h
+
 linux-2.6.39 / kernel / Makefile
 
 test_syscall.c
